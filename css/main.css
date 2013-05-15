@@ -1,0 +1,771 @@
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html, body{
+	overflow-x: hidden;
+}
+
+html{
+	background-color: #f2f2f2;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+	aside{
+		position: fixed;
+		width: 15%;
+		
+		text-align: center;
+
+		background-color: white;
+	}
+
+	aside .h1{
+		font: italic 2.2em Georgia,Palatino,serif;
+		letter-spacing: 0.1em;
+		line-height: 1.5em;
+		
+		color: #19f;
+	}
+
+	aside nav{
+		width: 100%;
+		
+		margin-top: 10%;
+		text-align: left;
+	}
+	
+		aside nav ul{
+			margin: 0;
+			padding: 0;	
+		}
+	
+			aside nav li{
+				
+			}
+			
+			aside nav a{
+				position: relative;
+				float: left;
+				width: 85%;
+				
+				padding: 7% 0 7% 15%;
+				z-index: 2;
+
+				border-left: solid 4px transparent;
+				font-family: "Trebuchet MS", Helvetica, sans-serif;
+				text-transform: uppercase;
+				
+				color: #444;
+			}
+			
+			aside nav a:hover,
+			.secaoAtualLink{
+				background-color: #f2f2f2;
+			}
+			
+			.secaoAtualLink{
+				border-left-color: #19f;
+			}
+			
+	article{
+		float: right;
+		width: 84%;
+	
+		padding: 1%;
+		padding-right: 0;
+/*		box-shadow: 0 -10px 12px 3px #CCC;*/
+		
+		color: #222;
+	}
+	
+		article h2{
+			font-weight: 400;
+			font-style: italic;
+
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+
+			color: #DA0000;
+		}
+
+		
+			.seta{
+				position: absolute;
+				left: 90%;
+				top: 30%;
+
+				border-top: 12px solid transparent;
+				border-bottom: 12px solid transparent;
+				border-right: 12px solid white;
+
+				width: 5px;
+				
+				cursor: auto;
+				z-index: 2;
+				visibility: hidden;
+			}
+			
+			.setaAtual{
+				visibility: visible;
+			}
+		
+
+#irParaTopo{
+	position: fixed;
+	left: 96%;
+	bottom: 0;
+
+	padding: 1.1% 0.5%;
+	padding-right: 0.7%;
+
+	z-index: 10;
+	opacity: 0;
+	cursor: default;
+
+	background: #DA0000;
+	font-size: 0.85em;
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+
+/* ==========================================================================
+	Views
+   ========================================================================== */
+
+#cadastrar{
+
+}
+
+	#cadastrar label,
+	#cadastrar input[type=text],
+	#cadastrar textarea{
+		width: 60%;
+		display: block;
+	}
+	
+	#cadastrar input[type=text],
+	#cadastrar input[type=file],
+	#cadastrar textarea{
+		margin: 2% 0;
+	}
+	
+	#cadastrar textarea{
+		height: 100px;
+	}
+	
+#listar{
+
+}
+
+	#divBusca .busca{
+		float: left;
+
+		padding: 1%;
+		margin-bottom: 2% !important;
+	}
+	
+	#divBusca h2{
+		float: right;
+		margin-right: 5%;
+		
+		color: #555;
+		line-height: 220%;
+	}
+	
+	#listar section{
+		height: 130px;
+		padding-left: 1%;
+		padding-right: 1%;
+		margin: 0 0.5% 1.5% 0.5%;
+	}
+
+	#listar .destacar:hover{
+		box-shadow: 0 0 12px 3px #D0D1D1; /* #d14836 #668BE6;*/
+	}
+	
+	#listar p{
+		font-size: 95%;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+#impressoes{
+
+}
+	
+	#impressoes .impressoes{
+		float: left;
+		width: 45%;
+	}
+	
+		#dataImpressoes{
+			clear: both;
+			width: 50%;
+		}
+	
+		#impressoes ul{
+			margin-top: 3%;
+		}
+	
+		#impressoes li{
+			padding: 0.4%;
+			padding-left: 0.8%;
+		}
+	
+		#impressoes .destacar:hover{
+			box-shadow: 0 0 12px 3px #D0D1D1; /* #d14836 #668BE6;*/
+		
+			cursor: pointer;
+		}
+		
+		#impressoes input[type=checkbox]{
+			padding: 1.2%;
+		}
+		
+		#resultadoImpressoes{
+			float: left;
+			
+			width: 52%;
+		}
+		
+		#resultadoImpressoes table{
+			width: 100%;
+			
+			margin-top: 7%;
+			margin-left: 2%;
+			
+			border-collapse:collapse;
+			background-color: white;
+		}
+		
+		#resultadoImpressoes table th{
+			color: #222;
+		}
+		
+		#resultadoImpressoes table td{
+			font-size: 90%;
+			
+			text-align: center;
+			color: #555;
+		}
+		
+		#resultadoImpressoes table tr,
+		#resultadoImpressoes table th,
+		#resultadoImpressoes table td{
+			padding: 1%;
+			border: 1px solid #E1E0E0;
+		}
+
+#inicio section,
+.botao{
+	-webkit-transition: box-shadow 0.3s; /* Chrome */
+	-moz-transition: box-shadow 0.3s; /* Firefox 4 */
+	-ms-transition: box-shadow 0.3s; /* IE */
+	-o-transition: box-shadow 0.3s; /* Opera */
+	transition: box-shadow 0.3s;
+}
+
+	#inicio p{
+		margin-bottom: 0;
+	}
+
+	#tatuadores .botao{
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	
+	#tatuadores section img{
+		border-radius: 15px;
+	}
+	
+	
+#editarTatuador label,
+#editarTatuador input[type=text]{
+	display: block;
+}
+/* ==========================================================================
+	Classes
+   ========================================================================== */
+
+.ui-icon{
+	cursor: pointer;
+}
+
+.linha{
+	width: 95%;
+	margin: 0 2.5%;
+}
+
+.linha-2 > *,
+.linha-3 > *,
+.linha-4 > *,
+.linha-5 > *{
+	float: left;
+}
+	
+.linha-2 > *{
+	width: 48%;
+}	
+
+	.linha-2 > :first-child,
+	.linha-2 > :nth-child(3){
+		margin-right: 4%;
+	}
+
+.linha-3 > *{
+	width: 26%;
+	padding: 1%;
+}
+
+.linha-4 > *{
+	width: 22%;
+	margin: 0 1%;
+}
+
+.linha-5 > *{
+	width: 17%;
+	margin: 0 1%;
+}
+
+.visivel,
+.secaoAtualLink div{
+	visibility: visible;
+}
+
+.invisivel {
+    visibility: hidden;
+}
+
+.navFixo {
+	position: fixed;
+	top: 0;
+	left: 16%;;
+	width: 85%;
+
+	z-index: 9999;
+	opacity: .95;
+	background: #f2f2f2;
+}
+
+.destacar{
+	-webkit-transition: box-shadow 0.3s, width ease-out 1s, opacity ease-out 0.4s; /* Chrome */
+	-moz-transition: box-shadow 0.3s, width ease-out 1s, opacity ease-out 0.4s; /* Firefox 4 */
+	-ms-transition: box-shadow 0.3s, width ease-out 1s, opacity ease-out 0.4s; /* IE */
+	-o-transition: box-shadow 0.3s, width ease-out 1s, opacity ease-out 0.4s; /* Opera */
+	transition: box-shadow 0.3s, width ease-out 1s, opacity ease-out 0.4s;
+}
+
+.botao{
+	color: #F0F1F1;
+	outline-color: #A6A6A5;
+
+	cursor: pointer;
+	border: 0;
+
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 90%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.botao:enabled:hover,
+.botao:enabled:focus{
+	box-shadow: 0 0 10px 1px #999;
+}
+
+a.botao{
+	padding: 1.7% 2% 1.5% 2%;
+}
+
+
+.ativa{
+	color: #6fAf2d;
+}
+
+.inativa{
+	color: #D14836;
+}
+
+.deletar{
+	background-color: #D14836;
+}
+
+.editar, input[type=submit]{
+	background-color: #6fAf2d;
+}
+
+.inputText:focus,
+.inputText:hover,
+.inputDestacar:focus,
+.inputDestacar:hover{
+	box-shadow: 0 0 12px 1px #99c2ff; /* #D0D1D1 #d14836 #99c2ff #668BE6;*/
+	border-color: white;
+}
+
+.block{
+	clear: both;
+}
+
+.mensagem{
+	position: absolute;
+	left: 80%;
+	top: -100px;
+
+	width: 17%;
+	padding: 1%;
+	visibility: hidden;
+
+	border-radius: 10px;
+}
+
+.mensagem p{
+	margin: 0;
+	padding: 0;
+
+	font-size: 95%;
+	color: whiteSmoke;
+}
+
+@keyframes slideInOut 
+{
+0%		{top: -100px; visibility: visible;}
+40%		{top: 0;}
+70%		{top: 0;}
+100%	{top: -100px;}
+}
+
+@-webkit-keyframes slideInOut /* Safari and Chrome */
+{
+0%		{top: -100px; visibility: visible;}
+40%		{top: 0;}
+70%		{top: 0;}
+100%	{top: -100px;}
+}
+
+.sucesso,
+.erro{
+	background-color: green;
+
+	animation: slideInOut 3.5s;
+	-webkit-animation: slideInOut 3.5s;
+}
+
+.erro{
+	background-color: red;
+}
+
+.impressoraSelecionada{
+	background-color: #79f;
+}
+
+
+/* ==========================================================================
+	Elementos
+   ========================================================================== */
+   
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+a{
+	font-family: Georgia, Palatino, serif;
+	text-decoration: none;
+}
+
+p{
+	color: #777;
+	line-height: 1.5em;
+}
+
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+} 
+
+textarea{
+	resize: none;
+}
+
+input, textarea{
+	padding: 2%;
+
+	line-height: 18px;
+
+	border: 1px solid #CCC;
+	color: #555555;
+	outline: none;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	-webkit-transition: box-shadow 0.3s, border-color 0.3s; /* Chrome */
+	-moz-transition: box-shadow 0.3s, border-color 0.3s;; /* Firefox 4 */
+	-ms-transition: box-shadow 0.3s, border-color 0.3s; /* IE */
+	-o-transition: box-shadow 0.3s, border-color 0.3s; /* Opera */
+	transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+input[type=text]{
+	width: 30%;
+	margin: 0.5% 0 1%;
+}
+
+.botao:disabled{
+	opacity: .6;
+}
+
+input[type=checkbox]{
+	position: relative;
+	width: 13px;
+	height: 13px;
+	
+	padding: 0.6%;
+	
+	margin: 0;
+	cursor: pointer;
+	vertical-align: baseline;
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	
+	-webkit-appearance: none;
+	appearance: none;
+	
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input[type=checkbox]:checked:before{
+	content: '\2714';
+	
+	position: absolute;
+	left: 0;
+	top: -2px;
+	
+	font-size: 110%;
+}
+
+
+label{
+	font-style: italic;
+	color: #555;
+	font-weight: bold;
+}
+	
+/* ==========================================================================
+	Agrupamentos
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+	aside{
+		height: 656px;
+	}
+	
+	.seta{
+		left: 91%;
+	}
+	
+	#listar .botao{
+		visibility: hidden;
+	}
+	
+	#listar section:hover .botao{
+		visibility: visible;
+	}
+}
+
+@media only screen and (min-width: 1140px) {
+
+	aside{
+		height: 912px;
+	}
+	
+	.seta{
+		left: 92%;
+	}
+}
+
+@media only screen and (min-width: 1300px) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisivel {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-aside-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* Transitions off */
+aside nav.noTransition a:hover > div{
+	height: 0;
+}
+
+aside nav.noTransition a{
+	color: #DA0000;
+}

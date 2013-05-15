@@ -1,0 +1,42 @@
+<div class="mensagem" ng-class="{sucesso: cadastro.sucesso, erro: cadastro.sucesso == false}">
+	<p>{{cadastro.mensagem}}</p>
+</div>
+
+<div id="cadastrar" class="linha-3">
+
+
+	<section>
+	
+		<form name="formIp">
+			<label for="IP">IP:</label>
+			<input type="text" class="inputText" ng-model="ip" name="ip" id="ip" placeholder="IP" required
+			pattern="^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$"/>
+		
+			<input type="submit" class="botao" ng-disabled="formIp.$invalid" ng-click="cadastrarImpressora(ip)" value="Salvar"/>
+		</form>
+		
+	</section>
+	
+	<section>
+	
+		<form name="formIps">
+			<label for="IPs">IPs:</label>
+			<textarea ng-model="ips" class="inputText" name="ips" id="ips" placeholder="IPs" required></textarea>
+		
+			<input type="submit" class="botao" ng-disabled="formIps.$invalid" ng-click="cadastrarImpressora(ips)" value="Salvar"/>
+		</form>
+		
+	</section>
+	
+	<section>
+	
+		<form name="formArquivo">
+			<label for="Arquivo">Arquivo:</label>
+			<input type="file" ng-model-instant onchange="angular.element(this).scope().setArquivo(this)" name="arquivo" id="arquivo"/>
+		
+			<input type="submit" class="botao" ng-disabled="formArquivo.$invalid" ng-click="cadastrarImpressoraArquivo(arquivo)" value="Salvar"/>
+		</form>
+		
+	</section>
+	
+</div>

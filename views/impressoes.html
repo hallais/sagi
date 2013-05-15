@@ -1,0 +1,63 @@
+<div id="impressoes">
+
+	<header>
+		<div id="divBusca">
+			<input type="text" ng-model="busca" name="busca" class="busca inputText" placeholder="Busca por IP | MAC | Descrição" />
+			<h2>
+				<ng-pluralize count="(impressoras|filter:busca).length"
+				           when="{'0': ':\(, nenhuma impressora encontrada',
+				               'one': '1 impressora',
+				               'other': '{} impressoras'}">
+				</ng-pluralize>
+			</h2>
+		</div>
+	
+		<div id="dataImpressoes">
+			<form name="form">
+				<input class="inputDestacar" id="de" ng-model="data.de" ui-date="dataDe" ng-required="true" placeholder="De">
+				<input class="inputDestacar" id="ate" ng-model="data.ate" ui-date="dataAte" ng-required="true" placeholder="Até">
+		
+				<input type="submit" class="botao" ng-disabled="form.$invalid || impressorasSelecionadas.length < 1" ng-click="getImpressoes()" value="Buscar"/> ({{impressorasSelecionadas.length}})
+			</form>
+		</div>
+	</header>
+
+	<div class="conteudo">
+
+		<div class="impressoes block">
+	
+			<ul>
+				<li class="destacar" ng-click="selecionar('todos')">
+					<input type="checkbox" ng-checked="todos" value="%" class="inputDestacar destacar">
+					Todas
+				</li>
+				<li class="destacar" ng-repeat="impressora in impressoras | filter:busca | orderBy:'ativa':true" ng-click="selecionar(impressora.mac)"
+					ng-class="{impressoraSelecionada: selecionado(impressora.mac)}">
+					<input type="checkbox" class="inputDestacar" ng-checked="selecionado(impressora.mac)" value="{{impressora.id}}">
+					{{impressora.mac}} | {{impressora.ip}} - {{impressora.descricao}}
+				</li>
+			</ul>
+		</div>
+	
+		<div id="resultadoImpressoes">
+			<table ng-show="true">
+				<thead>
+					<th>MAC</th>
+					<th>Descrição</th>
+					<th>Impressões</th>
+					<th>Total Impressões</th>
+				</thead>
+			
+				<tbody>
+					<tr ng-show="impressoes.length < 1"><td colspan="4">Nada.. =\</td></tr>
+					<tr ng-repeat="impressao in impressoes">
+						<td>{{impressao.mac}}</td>
+						<td>{{impressao.descricao}}</td>
+						<td>{{impressao.impressoes}}</td>
+						<td>{{impressao.impressoes_total}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

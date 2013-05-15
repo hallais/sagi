@@ -1,0 +1,31 @@
+<div id="listar">
+
+	<div id="divBusca">
+		<input type="text" ng-model="busca" name="busca" class="busca inputText" placeholder="Busca por IP | MAC | Descrição" />
+		<h2>
+			<ng-pluralize count="(impressoras|filter:busca).length"
+		              when="{'0': ':\(, nenhuma impressora encontrada',
+		                  'one': '1 impressora',
+		                  'other': '{} impressoras'}">
+			</ng-pluralize>
+		</h2>
+	</div>
+
+	<div id="listarImpressoras" class="linha-5 block">
+		<section class="destacar" ng-repeat="impressora in impressoras | filter:busca | orderBy:'ativa':true">
+		
+			<h3>{{impressora.ip.trim()}}</h3>
+			<p>
+				{{impressora.mac.trim()}} <br />
+				{{impressora.descricao}} <br />
+				<em ng-class="{true: 'ativa', false: 'inativa'}[impressora.ativa == 1]">
+					{{{true: 'Ativa', false: 'Inativa'}[impressora.ativa == 1]}}
+				</em>
+			</p>
+		
+<!--			<a class="editar botao" ng-href="#/tatuadores/{{tatuador.id}}/editar" title="Editar {{tatuador.nome}}">Editar</a>-->
+<!--			<a class="deletar botao" id="{{tatuador.id}}" title="Deletar {{tatuador.nome}}">Deletar</a>-->
+		</section>
+	</div>
+</div>
+
