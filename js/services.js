@@ -1,6 +1,9 @@
 'use strict';
 
 /* Services */
+sagi.factory('ImpressoraJSON', function($resource){
+	return $resource('server/controller/ListarImpressoras.php');
+});
 
 sagi.service('Impressora', function Storage($http, ImpressoraJSON, URLs) {
 	var self = this;
